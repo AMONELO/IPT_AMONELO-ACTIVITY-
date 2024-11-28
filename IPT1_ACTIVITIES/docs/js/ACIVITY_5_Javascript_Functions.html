@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additon of 2 Numbers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .light-mode {
+            background-color: white;
+            color: black;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+    <script>
+        function addNumbers() {
+            const num1 = parseFloat(document.getElementById('number1').value);
+            const num2 = parseFloat(document.getElementById('number2').value);
+            const sum = num1 + num2;
+            document.getElementById('result').innerText = 'The Sum Is: ' + sum;
+        }
+
+        function lightMode() {
+            document.body.classList.remove('dark-mode');
+            document.body.classList.add('light-mode');
+        }
+
+        function darkMode() {
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</head>
+<body class="light-mode">
+    <h1>Add Two Numbers</h1>
+    <input type="number" id="number1" placeholder="Enter first number" required>
+    <input type="number" id="number2" placeholder="Enter second number" required>
+    <button onclick="addNumbers()">Add</button>
+    <p id="result"></p>
+    
+    <button onclick="lightMode()">Light Mode</button>
+    <button onclick="darkMode()">Dark Mode</button>
+</body>
+</html>
